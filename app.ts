@@ -1,12 +1,19 @@
 "use strict"
-class Circle{
+class Shape {
     readonly color:string
     readonly name:string
+    constructor(color:string,name:string){
+        this.color = color
+        this.name = name
+    }
+}
+
+class Circle extends Shape{
+
     radius:number
     
     constructor(color:string, name:string, radius:number){
-        this.color = color
-        this.name = name
+        super(name,color)
         this.radius = radius
     }
     public calculatearea():number{
@@ -14,14 +21,11 @@ class Circle{
     }
     
 }
-class Rectangle{
-    readonly color:string
-    readonly name:string
+class Rectangle extends Shape{
     a:number
     b:number
     constructor(color:string, name:string, a:number,b:number){
-        this.color = color
-        this.name = name
+        super(color,name)
         this.a = a
         this.b = b
     }
@@ -32,13 +36,10 @@ class Rectangle{
         console.log(`The area of Rectangle is a * b = ${this.a} * ${this.b}`)
     }
 }
-class Square{
-    readonly color:string
-    readonly name:string
+class Square extends Shape{
     a :number
     constructor(color:string, name:string, a:number){
-        this.color = color
-        this.name = name
+        super(color,name)
         this.a = a
     }
     public calculatearea():number{
@@ -48,15 +49,12 @@ class Square{
        console.log(`The area of Square have Formula a in power of 2 =  ${this.a} * ${this.a}`) 
     }
 }
-class Triangle{
-    readonly color:string
-    readonly name:string
+class Triangle extends Shape{
     a:number
     height:number
 
     constructor(color:string, name:string, a:number, height:number){
-        this.color = color
-        this.name = name
+        super(color,name)
         this.a = a
         this.height = height
     }
